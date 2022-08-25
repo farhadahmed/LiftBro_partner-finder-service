@@ -17,7 +17,8 @@ public class UserAccount {
     private String[] fitnessGoals;
     private int[] workoutLocations;
 
-    @ManyToOne
+    @OneToMany
+    @JoinColumn(name = "workoutAppointments_id")
     private Set<WorkoutAppointment> workoutAppointments;
 
     public UserAccount() {

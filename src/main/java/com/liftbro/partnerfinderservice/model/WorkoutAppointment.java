@@ -1,9 +1,6 @@
 package com.liftbro.partnerfinderservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,7 +9,9 @@ public class WorkoutAppointment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date appointmentDate;
-    private Long organizingUserAccountId;
+
+    @ManyToOne
+    private UserAccount organizingUserAccount;
     private int attendingUserAccountId;
     private int workoutLocationId;
 
@@ -35,12 +34,12 @@ public class WorkoutAppointment {
         this.appointmentDate = appointmentDate;
     }
 
-    public Long getOrganizingUserAccountId() {
-        return organizingUserAccountId;
+    public UserAccount getOrganizingUserAccount() {
+        return organizingUserAccount;
     }
 
-    public void setOrganizingUserAccountId(Long organizingUserAccountId) {
-        this.organizingUserAccountId = organizingUserAccountId;
+    public void setOrganizingUserAccount(UserAccount organizingUserAccount) {
+        this.organizingUserAccount = organizingUserAccount;
     }
 
     public int getAttendingUserAccountId() {

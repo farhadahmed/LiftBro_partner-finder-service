@@ -2,6 +2,7 @@ package com.liftbro.partnerfinderservice.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class WorkoutAppointment {
@@ -56,5 +57,29 @@ public class WorkoutAppointment {
 
     public void setWorkoutLocationId(int workoutLocationId) {
         this.workoutLocationId = workoutLocationId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        WorkoutAppointment that = (WorkoutAppointment) o;
+
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkoutAppointment{" +
+                "id=" + id +
+                ", appointmentDate=" + appointmentDate +
+                ", workoutLocationId=" + workoutLocationId +
+                '}';
     }
 }

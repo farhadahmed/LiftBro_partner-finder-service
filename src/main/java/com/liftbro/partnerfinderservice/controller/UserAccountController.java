@@ -16,6 +16,6 @@ public class UserAccountController {
     @RequestMapping("/users")
     public String getUserAccounts(Model model) {
         model.addAttribute("users", userAccountRepository.findAll());
-        return "userAccounts/list";
+        return "users/list";
     }
 }

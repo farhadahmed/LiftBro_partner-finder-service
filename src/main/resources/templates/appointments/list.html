@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <title>Lift Bro</title>
+</head>
+<body>
+<h1>Workout Appointments</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Organizer ID</th>
+  </tr>
+  <tr th:each="appointment : ${appointments}">
+    <td th:text="${appointment.id}">123</td>
+    <td th:text="${appointment.appointmentDate}">12/12/2022</td>
+    <td th:text="${appointment.organizingUserAccount.id}">456</td>
+  </tr>
+</table>
+</body>
+</html>

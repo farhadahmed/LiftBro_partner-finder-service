@@ -1,6 +1,5 @@
 package com.liftbro.partnerfinderservice.bootstrap;
 
-import com.liftbro.partnerfinderservice.helper.WorkoutAppointmentHelper;
 import com.liftbro.partnerfinderservice.model.UserAccount;
 import com.liftbro.partnerfinderservice.model.WorkoutAppointment;
 import com.liftbro.partnerfinderservice.repositories.UserAccountRepository;
@@ -41,6 +40,8 @@ public class BootstrapData implements CommandLineRunner {
         System.out.println("TESTING BOOTSTRAP DATA:");
         System.out.println(userAccountRepository.count());
         System.out.println(workoutAppointmentRepository.count());
+
+        System.out.println(appointment.getAppointmentDate());
 
 
     }
